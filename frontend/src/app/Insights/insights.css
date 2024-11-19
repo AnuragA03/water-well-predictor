@@ -1,0 +1,46 @@
+/* insights.css */
+.insights {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.chart-card {
+  flex: 1;
+  flex-wrap: wrap;
+  margin-right: 20px;
+  padding: 20px;
+  border: 1px solid var(--container-color);
+  border-radius: 5px;
+  background-color: var(--container-color);
+  box-shadow: var(--box-shadow);
+}
+
+.chart-card h3 {
+  color: var(--title-color);
+  font-size: 1.2rem;
+}
+
+
+
+
+.main-content h2 {
+  /* border: 2px solid black; */
+  font-size: 1.5rem;
+  margin: 20px;
+  text-align: center;
+  color: var(--title-color);
+}
+
+.main-content p {
+  margin: 15px;
+  /* border: 2px solid black; */
+}
+
+.main-content-p {
+  background-color: rgb(240, 240, 240);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Add more CSS for additional styling as needed */

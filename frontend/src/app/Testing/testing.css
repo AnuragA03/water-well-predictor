@@ -1,0 +1,58 @@
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.boxes>div {
+  width: 100px;
+  aspect-ratio: 1;
+}
+
+.box-1 {
+  background-color: var(--primary-1);
+}
+
+.box-2 {
+  background-color: var(--primary-2);
+}
+
+.box-3 {
+  background-color: var(--primary-alt);
+}
+
+.box-4 {
+  background-color: var(--primary-lighter);
+}
+
+.box-5 {
+  background-color: var(--title-color);
+}
+
+.box-6 {
+  background-color: var(--text-color);
+}
+
+.box-7 {
+  background-color: var(--text-color-light);
+}
+
+.box-8 {
+  background-color: var(--input-color);
+}
+
+.box-9 {
+  background-color: var(--body-color);
+}
+
+.box-10 {
+  background-color: var(--container-color);
+}
+
+.box-11 {
+  background-color: var(--scroll-bar-color);
+}
+
+.box-12 {
+  background-color: var(--scroll-thumb-color);
+}

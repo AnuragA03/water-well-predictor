@@ -1,0 +1,28 @@
+.home .content{
+  background-color: var(--container-color);
+}
+.home .description {
+  color: var(--text-color);
+}
+
+.home .title {
+  color: var(--title-color);
+}
+
+.home .btn {
+  background-color: var(--primary-1);
+  color: #fff;
+  border-radius: 9999px;
+}
+
+.home .btn:hover,
+.home .btn.strip:hover {
+  background-color: var(--primary-lighter);
+  color: var(--primary-1);
+}
+
+.home .btn.strip {
+  background-color: var(--container-color);
+  border: 1.5px solid var(--primary-1);
+  color: var(--primary-1);
+}
