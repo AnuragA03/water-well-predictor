@@ -65,7 +65,7 @@ export default function Dashboard() {
   return (
     <>
       <div className="map-container">
-        <MapContainer className="dashboard" center={[20.59, 78.96]} zoom={5} style={{ height: '600px', width: '100%' }}>
+        <MapContainer className="dashboard" center={[29.0588, 76.0856]} zoom={9} style={{ height: '600px', width: '100%' }}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

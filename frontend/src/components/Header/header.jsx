@@ -56,14 +56,14 @@ export default () => {
               <i className="uil uil-graph-bar"></i> Insights
             </ActiveLink>
             <ActiveLink href="/Contact">
-              <i className="uil uil-message"></i> Contact us
+              <i className="uil uil-message"></i> Dashboard
             </ActiveLink>
-            <ActiveLink href="/FAQ">
+            {/* <ActiveLink href="/FAQ">
               <i className="uil uil-comment-question"></i> FAQs
             </ActiveLink>
             <ActiveLink href="/About">
               <i className="uil uil-user"></i> About
-            </ActiveLink>
+            </ActiveLink> */}
           </ul>
           <i className="uil uil-times close" onClick={() => setShowMenu(false)} ></i>
         </div>

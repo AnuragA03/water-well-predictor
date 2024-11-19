@@ -1,44 +1,155 @@
+'use client'
+
 import './form.css'
+import React, { useState, useRef } from 'react'
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { Upload, CheckCircle, AlertCircle } from 'lucide-react'
+
+
 export default () => {
+  const [name, setName] = useState('')
+  const [area, setArea] = useState('')
+  const [email, setEmail] = useState('')
+  const [file, setFile] = useState(null)
+  const [error, setError] = useState(null)
+  const [success, setSuccess] = useState(false)
+  const fileInputRef = useRef(null)
+
+  const handleFileChange = (event) => {
+    const selectedFile = event.target.files?.[0]
+    setError(null)
+    setSuccess(false)
+
+    if (selectedFile) {
+      if (selectedFile.type === 'text/csv' || selectedFile.name.endsWith('.csv')) {
+        setFile(selectedFile)
+      } else {
+        setFile(null)
+        setError('Please select a valid CSV file.')
+      }
+    }
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    setError(null)
+    setSuccess(false)
+
+    if (!name || !area || !email) {
+      setError('Please fill in all fields.')
+      return
+    }
+
+    if (!file) {
+      setError('Please select a CSV file.')
+      return
+    }
+
+    // Here you would typically send the form data and file to your server
+    // For this example, we'll simulate a submission with a timeout
+    try {
+      await new Promise(resolve => setTimeout(resolve, 2000)) // Simulate submission time
+      setSuccess(true)
+      setName('')
+      setArea('')
+      setEmail('')
+      setFile(null)
+      if (fileInputRef.current) {
+        fileInputRef.current.value = ''
+      }
+    } catch (err) {
+      setError('An error occurred while submitting the form. Please try again.')
+    }
+  }
+
   return (
-    <div className="card rounded shadow duration-300 p-5 m-5">
-      <h1 className="text-center heading-sm mb-6 text-[var(--title-color)]">Contact Us</h1>
-      <form action="#" method="post">
-        <div className="flex flex-col md:flex-row min-w-[268px] sm:min-w-full mb-4 space-y-4 md:space-y-0 md:space-x-4">
-          <div className="flex-1">
-            <label htmlFor="name" className="block mb-2">Name</label>
-            <input type="text"
+    <Card className="w-full max-w-2xl mx-auto">
+      <CardHeader>
+        <CardTitle>User Details and CSV Upload</CardTitle>
+        <CardDescription>Please fill in your details and upload a CSV file.</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="name">Name</Label>
+            <Input
               id="name"
-              name="name"
-              placeholder="Your Name"
-              className="w-full p-2 rounded-md bg-[var(--input-color)] shadow focus:outline-none focus:ring-2 focus:ring-[var(--primary-1)] ring-1 ring-[var(--text-color)] border-none transition duration-200"
-              required />
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Enter your name"
+              required
+            />
           </div>
-          <div className="flex-1">
-            <label htmlFor="email" className="block mb-2">Email</label>
-            <input type="email"
+          
+          <div className="space-y-2">
+            <Label htmlFor="area">Area</Label>
+            <Textarea
+              id="area"
+              value={area}
+              onChange={(e) => setArea(e.target.value)}
+              placeholder="Describe your area"
+              required
+            />
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="email">Email</Label>
+            <Input
               id="email"
-              name="email"
-              placeholder="Your Email"
-              className="w-full p-2 rounded-md bg-[var(--input-color)] shadow focus:outline-none focus:ring-2 focus:ring-[var(--primary-1)] ring-1 ring-[var(--text-color)] border-none transition duration-200"
-              required />
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              required
+            />
           </div>
-        </div>
-
-
-        <div className="mb-4">
-          <label htmlFor="message" className="block mb-2 text-text-color-light">Message</label>
-          <textarea id="message"
-            name="message"
-            rows="4"
-            placeholder="Your Message"
-            className="w-full p-2 rounded-md bg-[var(--input-color)] shadow focus:outline-none focus:ring-2 focus:ring-[var(--primary-1)] ring-1 ring-[var(--text-color)] border-none transition duration-200 resize-none"
-            required>
-          </textarea>
-        </div>
-
-        <button type="submit" className="btn">Submit</button>
-      </form>
-    </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="csv-file">Upload CSV File</Label>
+            <Input
+              id="csv-file"
+              type="file"
+              accept=".csv"
+              onChange={handleFileChange}
+              ref={fileInputRef}
+              required
+            />
+          </div>
+          
+          {file && (
+            <Alert>
+              <Upload className="h-4 w-4" />
+              <AlertTitle>Selected File</AlertTitle>
+              <AlertDescription>{file.name}</AlertDescription>
+            </Alert>
+          )}
+          
+          {error && (
+            <Alert variant="destructive">
+              <AlertCircle className="h-4 w-4" />
+              <AlertTitle>Error</AlertTitle>
+              <AlertDescription>{error}</AlertDescription>
+            </Alert>
+          )}
+          
+          {success && (
+            <Alert variant="default" className="bg-green-100 text-green-800 border-green-300">
+              <CheckCircle className="h-4 w-4" />
+              <AlertTitle>Success</AlertTitle>
+              <AlertDescription>Your form has been successfully submitted.</AlertDescription>
+            </Alert>
+          )}
+          
+          <Button type="submit" className="w-full">
+            Submit Form
+          </Button>
+        </form>
+      </CardContent>
+    </Card>
   )
 }
