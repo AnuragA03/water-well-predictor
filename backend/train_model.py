@@ -1,4 +1,3 @@
-import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
 from sklearn.multioutput import MultiOutputRegressor
@@ -6,9 +5,10 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import classification_report
 import joblib
-
+from update_csv import process_water_well_data
+ 
 # Load the dataset
-data = pd.read_csv("data.csv")
+data = process_water_well_data("data.csv")
 
 # Handle missing values
 data.fillna(data.mean(), inplace=True)
