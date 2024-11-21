@@ -1,17 +1,16 @@
 .logo {
-  aspect-ratio: 1;
-  width: 62px;
+  height: 32px;
 }
-.header{
+.header {
   width: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
   z-index: 10000;
   background-color: var(--body-color);
-  box-shadow: var(--box-shadow);
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
 }
-.nav{
+.nav {
   max-width: 100svw;
   height: 3rem;
   display: flex;
@@ -19,15 +18,15 @@
   align-items: center;
 }
 .logo,
-.toggle{
-  color:var(--title-color);
+.toggle {
+  color: var(--title-color);
   font-weight: 500;
 }
 .logo:hover,
-.toggle:hover{
+.toggle:hover {
   color: var(--primary-1);
 }
-.toggle{
+.toggle {
   font-size: 1.1rem;
   cursor: pointer;
 }
@@ -42,62 +41,62 @@
   color: var(--primary-1);
 }
 
-@media screen and (max-width:768px) {
-  .menu{
+@media screen and (max-width: 768px) {
+  .menu {
     position: fixed;
     bottom: -100%;
     left: 0;
     width: 100%;
-    background-color:var(--body-color);
+    background-color: var(--body-color);
     padding: 2rem 1.5rem 4rem;
     box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
     border-radius: 1.5rem 1.5rem 0 0;
-    transition: .3s;
+    transition: 0.3s;
   }
 }
 
-.list{
+.list {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(3,1fr) ;
+  grid-template-columns: repeat(3, 1fr);
 }
-.link{
+.link {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: var(--title-color);
   font-weight: 500;
 }
-.link:hover{
-  color:var(--primary-1);
+.link:hover {
+  color: var(--primary-1);
 }
-.link .uil{
+.link .uil {
   font-size: 1.2rem;
 }
 
-.close{
+.close {
   position: absolute;
   right: 1.3rem;
-  bottom: .5rem;
+  bottom: 0.5rem;
   font-size: 1.5rem;
   cursor: pointer;
   color: var(--primary-1);
 }
-.close:hover{
+.close:hover {
   color: var(--primary-alt);
 }
-.show.menu{
+.show.menu {
   bottom: 0;
 }
-.active.link{
-  color:var(--primary-1);
+.active.link {
+  color: var(--primary-1);
 }
 .scroll-header {
   box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
   .header {
     top: 0;
     bottom: initial;
@@ -125,8 +124,7 @@
   .change-theme {
     margin: 0;
   }
-  .logo{
-    width: 100px;
-    aspect-ratio: 1;
+  .logo {
+    height: 50px;
   }
 }
