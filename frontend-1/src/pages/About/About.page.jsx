@@ -29,17 +29,7 @@ export const About = () => {
           <h2 className="text-2xl font-bold mb-4">Team</h2>
           <div className="flex space-x-4">
             <ul className="w-1/2 space-y-4">
-              <li className="flex items-start">
-                <img
-                  src="/image/profile-1.jpg"
-                  alt="profile-1"
-                  className="w-16 h-16 rounded-full mr-4"
-                />
-                <div>
-                  <h3 className="font-semibold text-xl">Arya kumari</h3>
-                  <p className="text-gray-600">Fullstack Developer (Leader)</p>
-                </div>
-              </li>
+              
               <li className="flex items-start">
                 <img
                   src="/image/profile-2.jpg"
@@ -59,7 +49,7 @@ export const About = () => {
                 />
                 <div>
                   <h3 className="font-semibold text-xl">Arjun kumar Sharma</h3>
-                  <p className="text-gray-600">Frontend Developer</p>
+                  <p className="text-gray-600">Fullstack Developer</p>
                 </div>
               </li>
             </ul>
@@ -72,31 +62,21 @@ export const About = () => {
                 />
                 <div>
                   <h3 className="font-semibold text-xl">Anurag Adhikari</h3>
-                  <p className="text-gray-600">Frontend Developer</p>
+                  <p className="text-gray-600">Backend & ML Developer</p>
                 </div>
               </li>
               <li className="flex items-start">
                 <img
-                  src="/image/profile-5.jpg"
-                  alt="profile-5"
+                  src="/image/profile-1.jpg"
+                  alt="profile-1"
                   className="w-16 h-16 rounded-full mr-4"
                 />
                 <div>
-                  <h3 className="font-semibold text-xl">Divyansh Karakoti</h3>
-                  <p className="text-gray-600">Frontend Developer</p>
+                  <h3 className="font-semibold text-xl">Anirudh Chauhan</h3>
+                  <p className="text-gray-600">Frontend & ML Developer</p>
                 </div>
               </li>
-              <li className="flex items-start">
-                <img
-                  src="/image/profile-6.jpg"
-                  alt="profile-6"
-                  className="w-16 h-16 rounded-full mr-4"
-                />
-                <div>
-                  <h3 className="font-semibold text-xl">Aarav Bamba</h3>
-                  <p className="text-gray-600">AI/ML Developer</p>
-                </div>
-              </li>
+              
             </ul>
           </div>
         </section>

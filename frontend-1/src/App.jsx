@@ -84,7 +84,7 @@ export const App = () => {
             <h3 className="text-xl font-semibold mt-4 text-center">
               Arjun Kumar Sharma
             </h3>
-            <p className="text-center">Frontend Developer</p>
+            <p className="text-center">Fullstack Developer</p>
           </div>
           <div className="w-full sm:w-1/2 p-4">
             <img
@@ -95,18 +95,18 @@ export const App = () => {
             <h3 className="text-xl font-semibold mt-4 text-center">
               Anurag Adhikari
             </h3>
-            <p className="text-center">Frontend Developer</p>
+            <p className="text-center">Backend & ML Developer</p>
           </div>
           <div className="w-full sm:w-1/2 p-4">
             <img
-              src="/image/profile-5.jpg"
+              src="/image/profile-1.jpg"
               alt="Member Name"
               className="w-32 h-32 mx-auto rounded-full"
             />
             <h3 className="text-xl font-semibold mt-4 text-center">
-              Divyansh karakoti
+              Anirudh Chauhan
             </h3>
-            <p className="text-center">React Developer</p>
+            <p className="text-center">Backend & ML Developer</p>
           </div>
         </div>
       </section>
