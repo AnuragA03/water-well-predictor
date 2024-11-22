@@ -1,0 +1,6 @@
+.contact .card {
+  background-color: var(--container-color);
+}
+.contact .card:hover {
+  box-shadow: var(--box-shadow);
+}

@@ -1,0 +1,42 @@
+.guideline .heading {
+  color: var(--title-color);
+}
+
+.guideline .images {
+  max-width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.guideline .heading-sm {
+  color: var(--title-color);
+  margin-bottom: 0.5rem;
+}
+.guideline .card,
+.guideline .card1 {
+  background-color: var(--container-color);
+}
+
+.guideline .card:hover,
+.guideline .card1:hover {
+  box-shadow: var(--box-shadow);
+}
+.guideline .card {
+  flex-basis: calc(100% / 3 - 1rem);
+}
+.guideline .card1 {
+  flex-basis: calc(100% / 2 - 1rem);
+}
+
+@media (max-width: 768px) {
+  .guideline .card {
+    flex-basis: calc(100% / 2 - 1rem);
+  }
+  .guideline .card1 {
+    flex-basis: calc(100% - 1rem);
+  }
+}
+@media (max-width: 516px) {
+  .guideline .card {
+    flex-basis: calc(100% - 1rem);
+  }
+}

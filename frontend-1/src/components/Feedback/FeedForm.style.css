@@ -1,0 +1,42 @@
+.cta {
+  position: relative;
+  padding: 8px 10px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: var(--primary-1);
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  position: relative;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--title-color);
+}
+
+.cta:hover span {
+  color: var(--container-color);
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: var(--primary-lighter);
+  color: var(--container-color);
+}
+
+.cta:active {
+  transform: scale(0.95);
+}
